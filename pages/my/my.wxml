@@ -1,0 +1,20 @@
+<view class="profile-card">
+    <view class="my-avatar">
+        <view class="avatar-wrapper">
+            <image wx:if="{{is_login}}" src="{{ avatarUrl }}" mode="aspectFill"/>
+        </view>
+        <van-button wx:if="{{!is_login}}" bindtap="login">请先登录</van-button>
+        <text wx:else>{{nickName}}</text>
+    </view>
+
+    <view class="main">
+        <text class="main-text">常用功能</text>
+        <van-grid class="grid" column-num="3" border="{{ false }}">
+            <van-grid-item wx:if="index" class="grid-item" use-slot wx:for="{{ 6 }}" wx:key="index" wx:for-item="index" bindtap="{{ index==0?'goToFeedback':index==1?'goToCollect':'showToast'  }}">
+                <image src="{{ index==0?'../../static/feedback.png':index==1?'../../static/收藏夹.png':'../../static/develop.png' }}" />
+                <text>{{ index==0?'意见反馈':index==1?'我的收藏':'开发中~' }}</text>
+            </van-grid-item>
+        </van-grid>
+    </view>
+    <van-toast id="van-toast" />
+</view>

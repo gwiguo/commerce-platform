@@ -1,0 +1,9 @@
+<view class="feedback_container">
+    <view class="input_container">
+        <view style="margin-bottom:10px;">意见反馈</view>
+        <van-field value="{{feedback_text}}" type="textarea" autosize="{{({maxHeight:200,minHeight:200})}}" placeholder="请输入您要反馈的问题" size="large" data-com-type="wx" bind:input="input_text" bind:change="input_change"></van-field>
+    </view>
+    <view>
+        <van-button type="primary" size="large" disabled="{{isDisabledSubmitBtn}}" data-com-type="wx" bind:click="submit">提交反馈意见</van-button>
+    </view>
+</view>

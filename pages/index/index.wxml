@@ -1,0 +1,11 @@
+<view class="home">
+    <!-- <view class="index-title">title</view> -->
+    <van-search 
+        value="{{value}}" 
+        size="large" 
+        shape="round"
+        placeholder="请输入文章标题" 
+        class="my-van-search" 
+        placeholder-style="font-size:26px !important;"
+        bindsearch="goArticle" />
+</view>

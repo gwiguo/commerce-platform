@@ -1,0 +1,57 @@
+<view class="home">
+    <swiper indicator-dots="{{true}}"
+        autoplay="{{true}}" interval="{{2000}}" style="height: 240px;">
+        <block wx:for="{{banner_list}}" wx:key="*this">
+            <swiper-item bindtap="goArticleDetail" data-id="{{item['_id']}}">
+                <view class="swiper-item">
+                    <image src="{{item.cover[0]}}" mode="aspectFill" style="width: 100%;"></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view wx:if="{{!article_list.length}}" class="custom-class van-empty" v-if="!cardList.length">
+        <view class="van-empty__image">
+            <image class="van-empty__image__img" src="https://img.yzcdn.cn/vant/custom-empty-image.png" />
+        </view>
+        <view class="van-empty__description">
+            暂无数据
+        </view>
+    </view>
+  <scroll-view wx:else scroll-y="true" class="my_scroll_view">
+    <view 
+      wx:for="{{article_list}}" 
+      wx:key="_id"      
+      class="card_item"
+      data-id="{{item._id}}"
+      bindtap="goArticleDetail">
+        <van-image
+          class="my_card_image"
+          fit="cover"
+          src="{{item.cover[0]}}"								
+          width="88"
+          height="88"
+          use-loading-slot
+          use-error-slot
+          lazy-load	
+        >
+          <van-loading
+            slot="loading"
+            type="spinner"
+            size="20" 
+            vertical
+          >								
+          </van-loading>
+          <van-icon slot="error" size="48" name="photo-fail" />	
+        </van-image>             
+        <view class="my_card_content">
+          <view class="my_card_title">            
+            {{item.title}}
+          </view>
+          <view class="my_card_tag">
+            <van-tag size="large" plain color="#337559" round type="primary">{{item.classify}}</van-tag>
+            <text style="color: #bbb;">{{item.browse_count}}浏览</text>
+          </view>	
+        </view>
+    </view>
+  </scroll-view>
+</view>

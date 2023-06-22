@@ -1,0 +1,50 @@
+page {
+  height: 100%;
+}
+.detail_container {
+  padding: 0 20px 54px 20px;
+}
+.detail_container .title {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.detail_container .header {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.detail_container .header .header_info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: baseline;
+  padding: 0 10px 0 20px;
+}
+.detail_container .detail_content {
+  flex: 1;
+  margin-bottom: 20px;
+}
+.detail_container .bottom_tools_container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: calc(100% - 20px);
+  background-color: #fff;
+}
+.detail_container .bottom_tools_container .input_opinion .van-search {
+  width: 200px;
+}
+.detail_container .bottom_tools_container .btns {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.collect_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

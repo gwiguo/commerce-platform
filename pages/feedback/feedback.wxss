@@ -1,0 +1,12 @@
+.feedback_container {
+  padding: 20px 16px;
+}
+.feedback_container .input_container {
+  margin-bottom: 20px;
+}
+.feedback_container .input_container .van-cell {
+  border: 1px solid #eee;
+}
+.feedback_container .image_container {
+  margin-bottom: 20px;
+}

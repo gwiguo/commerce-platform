@@ -1,0 +1,29 @@
+<view class="detail_container">
+    <view class="title">{{article_info.title}}</view>
+    <view class="header">
+        <view class="avatar">
+            <van-image src="{{article_info.author.avatar}}" fit="fill" round="{{true}}" width="50" height="50" data-com-type="wx"></van-image>
+        </view>
+        <view class="header_info">
+            <view style="flex: 1;">{{article_info.author.author_name}}</view>
+            <view style="display:flex;color:#bbb;justify-content:space-between;flex:1;width:100%;">
+                <view>{{''+article_info.create_time+''}}</view>
+                <view>{{''+article_info.browse_count+' 浏览'}}</view>
+                <view>{{article_info.thumbs_up_count+' 赞'}}</view>
+            </view>
+        </view>
+    </view>
+    <scroll-view class="detail_content" scroll-y="true" user-select>
+        <mp-html wx:if="{{is_show_content}}" content="{{ article_info.content }}" user-select></mp-html>
+        <view class="collect_wrapper">
+            <van-button wx:if="{{is_like}}" bindtap="disLike">
+                <van-icon name="like" color="red"></van-icon>
+                <text> 取消收藏</text>
+            </van-button>
+            <van-button wx:else bindtap="like">
+                <van-icon name="like-o"></van-icon>
+                <text> 添加收藏</text>
+            </van-button>
+        </view>
+    </scroll-view>
+</view>
